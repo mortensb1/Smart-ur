@@ -1,0 +1,18 @@
+
+lav int til counter af states
+lav int til antal af states
+
+void StateChanger()
+    counter af states = encoders nuværende værdi % antal af states;
+
+    if (counter af states = 1)
+        kør function 1;
+    
+    else if (counter af states = 2)
+        kør function 2;
+
+    else if (counter af states = 3)
+        kør function 3;
+
+    else if (counter af states = 4)
+        kør function 4;
