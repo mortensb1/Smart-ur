@@ -1,0 +1,50 @@
+void KogEg()
+    Skift display til forside for KogEg
+    KogEgPage = 0
+    kogEgKør = false
+    egTimer = 0
+    
+    if knap trykkes ned
+        kogEgKør = true
+
+    while kogEgKør = true
+    encoderPlace = encoders nuværende værdi % antal af pages
+    
+        if KogEgPage = 0
+        {
+            Skift display
+                (Vis 3 muligheder (blød kogt, Smilende kogt, Hård kogt))
+
+            if (encoderPlace = 0)
+                highlight blød kogt
+            else if (encoderPlace = 1)
+                highlight Smilende kogt
+            else if (encoderPlace = 2)
+                highlight Hård kogt
+
+            if (encoderPlace = 0 && knap er trykket)
+                egTimer = 5
+                KogEgPage = 1
+            else if (encoderPlace = 1 && knap er trykket)
+                egTimer = 7
+                KogEgPage = 1
+            else if (encoderPlace = 2 && knap er trykket)
+                egTimer = 9
+                KogEgPage = 1
+        }
+
+        if KogEgPage = 1
+            startTid = nuværende tid
+            Skift display
+                (Vis hvor meget tid der skal gå)
+            while KogEgPage = 1
+                tidGået = nuværende tid - startTid
+
+                Vis tidGået på skærmen
+
+                if (tidgået / 1000 >= egTimer)
+                    kogEgPage = 2
+        
+        if kogEgPage = 2
+            
+
