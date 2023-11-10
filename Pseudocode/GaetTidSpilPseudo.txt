@@ -1,0 +1,32 @@
+Funktion GætTidSpil
+
+    Skift display til forside
+    GætTidPage = 0
+
+    Imens GætTidSpil kører
+        Hvis der klikkes og GætTidPage = 0
+            GætTidPage = 1
+            Skift display
+                (Vis random tid man skal gætte)
+                (Skriv "tryk for at starte")
+
+        Hvis der klikkes og GætTidPage = 1
+            Find nuværende tid
+            GætTidPage = 2
+            Skift display 
+                (der skal stå noget i retning af "Tryk når du tror tiden er gået")
+            
+        Hvis der klikkes og GætTidPage = 2
+            GætTidPage er 3
+            Find nuværende tid og træk fra tid ved start
+            Skift display
+                (Din tid sammenlignes med tiden der skulle gættes)
+                (Skal vise noget i retning af "Tæt på!" eller "Langt fra")
+        
+        Hvis GætTidPage er 3 og der klikkes
+            GætTidSpil skal ikke køre mere
+            
+
+
+
+        
