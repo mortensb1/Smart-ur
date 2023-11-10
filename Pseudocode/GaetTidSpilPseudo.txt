@@ -2,9 +2,12 @@ Funktion GætTidSpil
 
     Skift display til forside
     GætTidPage = 0
+    
+    Hvis der klikkes
+        Kør GætTidSpil
 
     Imens GætTidSpil kører
-        Hvis der klikkes og GætTidPage = 0
+        Hvis GætTidPage = 0
             GætTidPage = 1
             Skift display
                 (Vis random tid man skal gætte)
@@ -13,7 +16,7 @@ Funktion GætTidSpil
         Hvis der klikkes og GætTidPage = 1
             Find nuværende tid
             GætTidPage = 2
-            Skift display 
+            Skift display
                 (der skal stå noget i retning af "Tryk når du tror tiden er gået")
             
         Hvis der klikkes og GætTidPage = 2
