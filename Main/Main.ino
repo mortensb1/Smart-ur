@@ -17,11 +17,18 @@ int encoderCount = 0;
 void setup()
 {
   lcd.begin(16, 2);
+  Serial.begin(9600);
 }
 
 void loop()
 {
   encoderCount = encoder.read()/4;
+  if (encoderCount > 3)
+  {
+    encoder.write(0);
+    encoderCount = encoder.read()/4;
+  }
+  Serial.println(encoderCount);
   funktionsListe[encoderCount]();
 }
 
