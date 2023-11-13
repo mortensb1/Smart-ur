@@ -33,7 +33,7 @@ void GuessTime()
     if(guessTimePage == 0)
     {
       guessTimePage = 1;
-      lcd.print();
+      lcd.print("running");
     }
 
     if(guessTimePage == 3 && digitalRead(4) == HIGH)
