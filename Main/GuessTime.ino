@@ -17,8 +17,8 @@ void GuessTime()
   int guessTimePage = 0;
   int guessTimeRunning = false;
 
-  lcd.print("Gæt tid spillet!");
-  delay(10);
+  lcd.print("Guess time game!");
+  delay(20);
   lcd.clear();
   
   if(digitalRead(4) == HIGH)
@@ -33,7 +33,7 @@ void GuessTime()
     if(guessTimePage == 0)
     {
       guessTimePage = 1;
-      lcd.print("");
+      lcd.print();
     }
 
     if(guessTimePage == 3 && digitalRead(4) == HIGH)
