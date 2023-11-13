@@ -1,13 +1,16 @@
+// #include "rgb_lcd.h"
 
+// rgb_lcd lcd;
 
-void setup(){
-  pinMode(4, INPUT);
-  Serial.begin(9600);
-}
+// void setup(){
+//   pinMode(4, INPUT);
+//   Serial.begin(9600);
+//   lcd.begin(16, 2);
+// }
 
-void loop(){
-  GuessTime();
-}
+// void loop(){
+//   GuessTime();
+// }
 
 void GuessTime()
 {
@@ -17,7 +20,7 @@ void GuessTime()
   if(digitalRead(4) == HIGH)
   {
     guessTimeRunning = true;
-
+    lcd.print("Gæt tid spillet!")
     Serial.println("Kører");
     delay(200);
   }
