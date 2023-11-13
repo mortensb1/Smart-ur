@@ -29,17 +29,20 @@ void loop()
 void Ur()
 {
   lcd.print("Ur");
+  delay(10);
   lcd.clear();
 }
 
 void StopUr()
 {
   lcd.print("StopUr");
+  delay(10);
   lcd.clear();
 }
 
 void KogEg()
 {
   lcd.print("KogEg");
+  delay(10);
   lcd.clear();
 }
