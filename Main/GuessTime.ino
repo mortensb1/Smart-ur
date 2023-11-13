@@ -16,18 +16,27 @@ void GuessTime()
 {
   int guessTimePage = 0;
   int guessTimeRunning = false;
+
+  lcd.print("Gæt tid spillet!");
+  delay(10);
+  lcd.clear();
   
   if(digitalRead(4) == HIGH)
   {
     guessTimeRunning = true;
-    lcd.print("Gæt tid spillet!")
     Serial.println("Kører");
     delay(200);
   }
 
   while(guessTimeRunning == true)
   {
-    if(guessTimePage == 0 && digitalRead(4) == HIGH)
+    if(guessTimePage == 0)
+    {
+      guessTimePage = 1;
+      lcd.print("");
+    }
+
+    if(guessTimePage == 3 && digitalRead(4) == HIGH)
     {
       Serial.println("Kører ikke");
       guessTimeRunning = false;
