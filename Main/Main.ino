@@ -8,11 +8,12 @@ Encoder encoder(2, 3);
 void Ur();
 void StopUr();
 void GuessTime();
-void KogEg();
+void EggTimer();
 
-void (*funktionsListe[4])() = {Ur, StopUr, GuessTime, KogEg};
+void (*funktionsListe[4])() = {Ur, StopUr, GuessTime, EggTimer};
 
 int encoderCount = 0;
+int buttonPin = 4;
 
 void setup()
 {
@@ -44,13 +45,6 @@ void Ur()
 void StopUr()
 {
   lcd.print("StopUr");
-  delay(10);
-  lcd.clear();
-}
-
-void KogEg()
-{
-  lcd.print("KogEg");
   delay(10);
   lcd.clear();
 }

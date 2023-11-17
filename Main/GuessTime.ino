@@ -22,7 +22,7 @@ void GuessTime()
   delay(20);
   lcd.clear();
   
-  if(digitalRead(4) == HIGH)
+  if(digitalRead(buttonPin) == HIGH)
   {
     guessTimeRunning = true;
     delay(200);
@@ -42,7 +42,7 @@ void GuessTime()
       lcd.setCursor(0, 1);
       lcd.print("Press to start");
     }
-    else if(guessTimePage == 1 && digitalRead(4) == HIGH)
+    else if(guessTimePage == 1 && digitalRead(buttonPin) == HIGH)
     {
       timeStarted = millis() / 1000;
       Serial.print("Tid startet: ");
@@ -55,7 +55,7 @@ void GuessTime()
       lcd.setCursor(0, 1);
       lcd.print("the time is up");
     }
-    else if(guessTimePage == 2 && digitalRead(4) == HIGH)
+    else if(guessTimePage == 2 && digitalRead(buttonPin) == HIGH)
     {
       delay(200);
       int timeGuessed = ((millis() / 1000) - timeStarted);
@@ -67,7 +67,7 @@ void GuessTime()
       lcd.print(timeGuessed);
     }
 
-    if(guessTimePage == 3 && digitalRead(4) == HIGH)
+    if(guessTimePage == 3 && digitalRead(buttonPin) == HIGH)
     {
       Serial.println("Kører ikke");
       guessTimeRunning = false;
