@@ -4,17 +4,20 @@ void EggTimer()
   int encoderPlace = 0;
   int eggTimerRunning = false;
   int eggBoilingTime = 0;
+  long startTime = 0;
 
   lcd.print("Eggetimer");
   Serial.println(eggTimerRunning);
   delay(20);
   lcd.clear();
 
-  if(digitalRead(buttonPin) == HIGH && eggPage == 0)
+  if(digitalRead(buttonPin) == HIGH)
   {
     encoder.write(0);
     eggTimerRunning = true;
     eggPage = 1;
+    lcd.println("...");
+    delay(1000);
   }
 
   while(eggTimerRunning == true)
@@ -44,15 +47,26 @@ void EggTimer()
         eggBoilingTime = 9;
       }
 
-      if(digitalRead(buttonPin) == HIGH && eggPage == 1)
+      if(digitalRead(buttonPin) == HIGH)
       {
         eggPage = 2;
+        startTime = millis();
       }
     }
 
     if(eggPage == 2)
     {
+      int minLeft = (millis() - startTime) / 1000 / 60;
+      int secLeft = ((millis() - startTime) / 1000) % 60;
+
+      lcd.print("Bloedkogt: ");
       lcd.print(eggBoilingTime);
+      lcd.print(" min");
+      lcd.setCursor(0, 1);
+      lcd.print("Tilbage: ");
+      lcd.print(minLeft);
+      lcd.print(":");
+      lcd.print(secLeft);
       delay(20);
       lcd.clear();
     }
