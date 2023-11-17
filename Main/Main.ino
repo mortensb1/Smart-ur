@@ -16,6 +16,7 @@ int encoderCount = 0;
 
 void setup()
 {
+  pinMode(4, INPUT);
   lcd.begin(16, 2);
   Serial.begin(9600);
 }
