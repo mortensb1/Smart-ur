@@ -9,7 +9,7 @@ void StopUr()
 
   int minLeft = 0;
   int secLeft = 0;
-  int startTime = 0;
+  long startTime = 0;
   int minSlut = 0;
   int secSlut = 0;
 

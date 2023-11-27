@@ -14,10 +14,12 @@ void (*funktionsListe[4])() = {Ur, StopUr, GuessTime, EggTimer};
 
 int encoderCount = 0;
 int buttonPin = 4;
+int buzzerPin = 8;
 
 void setup()
 {
-  pinMode(4, INPUT);
+  pinMode(buttonPin, INPUT);
+  pinMode(buzzerPin, OUTPUT);
   lcd.begin(16, 2);
   Serial.begin(9600);
 }
@@ -33,7 +35,7 @@ void loop()
   }
   Serial.println(encoderCount);
   funktionsListe[encoderCount]();
-  Serial.println(digitalRead(buttonPin));
+  // Serial.println(digitalRead(buttonPin));
 }
 
 

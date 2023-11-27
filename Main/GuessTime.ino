@@ -60,8 +60,6 @@ void GuessTime()
       delay(200);
       int timeGuessed = ((millis() / 1000) - timeStarted);
       guessTimePage = 3;
-      Serial.print("Tid ved slut: ");
-      Serial.println(millis() / 1000);
       lcd.clear();
       lcd.setCursor(0, 0);
       lcd.print(timeGuessed);
@@ -69,7 +67,6 @@ void GuessTime()
 
     if(guessTimePage == 3 && digitalRead(buttonPin) == HIGH)
     {
-      Serial.println("Kører ikke");
       guessTimeRunning = false;
       delay(200);
     }

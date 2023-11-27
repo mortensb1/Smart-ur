@@ -7,7 +7,6 @@ void EggTimer()
   long startTime = 0;
 
   lcd.print("Eggetimer");
-  Serial.println(eggTimerRunning);
   delay(20);
   lcd.clear();
 
