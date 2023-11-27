@@ -18,7 +18,7 @@ void StopUr()
     encoder.write(0);
     stopUrRunning = true;
     stopUrPage = 1;
-    lcd.println("...");
+    lcd.print("...");
     delay(1000);
   }
 

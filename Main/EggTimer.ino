@@ -16,7 +16,7 @@ void EggTimer()
     encoder.write(0);
     eggTimerRunning = true;
     eggPage = 1;
-    lcd.println("...");
+    lcd.print("...");
     delay(1000);
   }
 
