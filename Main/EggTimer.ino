@@ -51,6 +51,7 @@ void EggTimer()
       {
         eggPage = 2;
         startTime = millis();
+        delay(100);
       }
     }
 
@@ -63,12 +64,16 @@ void EggTimer()
       lcd.print(eggBoilingTime);
       lcd.print(" min");
       lcd.setCursor(0, 1);
-      lcd.print("Tilbage: ");
+      lcd.print("Tid: ");
       lcd.print(minLeft);
       lcd.print(":");
       lcd.print(secLeft);
       delay(20);
       lcd.clear();
+      if (digitalRead(buttonPin) == HIGH)
+      {
+        eggTimerRunning = false;
+      }
     }
   }
 }

@@ -25,6 +25,7 @@ void setup()
 void loop()
 {
   encoderCount = encoder.read()/4;
+
   if (encoderCount > 3)
   {
     encoder.write(0);
@@ -32,6 +33,7 @@ void loop()
   }
   Serial.println(encoderCount);
   funktionsListe[encoderCount]();
+  Serial.println(digitalRead(buttonPin));
 }
 
 
@@ -42,9 +44,3 @@ void Ur()
   lcd.clear();
 }
 
-void StopUr()
-{
-  lcd.print("StopUr");
-  delay(10);
-  lcd.clear();
-}
