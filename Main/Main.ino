@@ -35,10 +35,11 @@ void loop()
   }
   if (encoder.read() < 0)
   {
-    encoder.write(12);
+    encoder.write(15);
     encoderCount = encoder.read()/4;
   }
   funktionsListe[encoderCount]();
+  Serial.println(digitalRead(buttonPin));
 }
 
 
