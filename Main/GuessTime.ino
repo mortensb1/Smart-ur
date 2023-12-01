@@ -38,9 +38,9 @@ void GuessTime()
       lcd.clear();
       lcd.setCursor(3, 0);
       lcd.print(timeToGuess);
-      lcd.print(" seconds");
+      lcd.print(" sekunder");
       lcd.setCursor(0, 1);
-      lcd.print("Press to start");
+      lcd.print("Tryk for start");
     }
     else if(guessTimePage == 1 && digitalRead(buttonPin) == HIGH)
     {
@@ -51,9 +51,9 @@ void GuessTime()
       guessTimePage = 2;
       lcd.clear();
       lcd.setCursor(0, 0);
-      lcd.print("Press to guess when");
+      lcd.print("Tryk naar tiden");
       lcd.setCursor(0, 1);
-      lcd.print("the time is up");
+      lcd.print("er gaaet");
     }
     else if(guessTimePage == 2 && digitalRead(buttonPin) == HIGH)
     {
@@ -62,7 +62,12 @@ void GuessTime()
       guessTimePage = 3;
       lcd.clear();
       lcd.setCursor(0, 0);
+      lcd.print("Din tid: ");
       lcd.print(timeGuessed);
+      lcd.print(" s");
+      lcd.setCursor(0, 1);
+      lcd.print("Afvigelse: ");
+      lcd.print(abs(timeGuessed - timeToGuess));
     }
 
     if(guessTimePage == 3 && digitalRead(buttonPin) == HIGH)
