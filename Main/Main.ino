@@ -3,7 +3,7 @@
 
 rgb_lcd lcd;
 
-Encoder encoder(2, 3);
+Encoder encoder(3, 4);
 
 void Ur();
 void StopUr();
@@ -13,7 +13,7 @@ void EggTimer();
 void (*funktionsListe[4])() = {Ur, StopUr, GuessTime, EggTimer};
 
 int encoderCount = 0;
-int buttonPin = 4;
+int buttonPin = 2;
 int buzzerPin = 8;
 
 void setup()

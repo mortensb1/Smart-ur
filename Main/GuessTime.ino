@@ -1,17 +1,3 @@
-// #include "rgb_lcd.h"
-
-// rgb_lcd lcd;
-
-// void setup(){
-//   pinMode(4, INPUT);
-//   Serial.begin(9600);
-//   lcd.begin(16, 2);
-// }
-
-// void loop(){
-//   GuessTime();
-// }
-
 void GuessTime()
 {
   int guessTimePage = 0;
@@ -67,7 +53,8 @@ void GuessTime()
       lcd.print(" s");
       lcd.setCursor(0, 1);
       lcd.print("Afvigelse: ");
-      lcd.print(abs(timeGuessed - timeToGuess));
+      lcd.print(abs(timeGuessed - 10)); // coden uder virker ikke
+      // lcd.print(abs(timeGuessed - timeToGuess));
     }
 
     if(guessTimePage == 3 && digitalRead(buttonPin) == HIGH)
