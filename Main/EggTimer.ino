@@ -10,7 +10,7 @@ void EggTimer()
   delay(20);
   lcd.clear();
 
-  if(digitalRead(buttonPin) == HIGH)
+  if(IsButtonPressed())
   {
     encoder.write(0);
     eggTimerRunning = true;
@@ -46,7 +46,7 @@ void EggTimer()
         eggBoilingTime = 9;
       }
 
-      if(digitalRead(buttonPin) == HIGH)
+      if(IsButtonPressed())
       {
         eggPage = 2;
         startTime = millis();
@@ -69,7 +69,7 @@ void EggTimer()
       lcd.print(secLeft);
       delay(20);
       lcd.clear();
-      if (digitalRead(buttonPin) == HIGH)
+      if (IsButtonPressed())
       {
         eggTimerRunning = false;
       }

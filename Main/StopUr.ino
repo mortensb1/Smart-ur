@@ -13,13 +13,13 @@ void StopUr()
   int minSlut = 0;
   int secSlut = 0;
 
-  if (digitalRead(buttonPin) == HIGH)
+  if (IsButtonPressed())
   {
     encoder.write(0);
     stopUrRunning = true;
     stopUrPage = 1;
     lcd.print("...");
-    delay(1000);
+    delay(500);
   }
 
   while (stopUrRunning == true)
@@ -30,7 +30,7 @@ void StopUr()
       lcd.print("tryk for start");
       delay(100);
       lcd.clear();
-      if (digitalRead(buttonPin) == HIGH)
+      if (IsButtonPressed())
       {
         stopUrPage = 2;
         startTime = millis();
@@ -50,7 +50,7 @@ void StopUr()
       lcd.print(secLeft);
       delay(20);
       lcd.clear();
-      if (digitalRead(buttonPin) == HIGH)
+      if (IsButtonPressed())
       {
         stopUrPage = 3;
         minSlut = minLeft;
@@ -68,7 +68,7 @@ void StopUr()
       lcd.print(secSlut);
       delay(20);
       lcd.clear();
-      if (digitalRead(buttonPin) == HIGH)
+      if (IsButtonPressed())
       {
         stopUrRunning = false;
         stopUrPage = 0;

@@ -8,7 +8,7 @@ void GuessTime()
   delay(20);
   lcd.clear();
   
-  if(digitalRead(buttonPin) == HIGH)
+  if(IsButtonPressed())
   {
     guessTimeRunning = true;
     delay(200);
@@ -28,7 +28,7 @@ void GuessTime()
       lcd.setCursor(0, 1);
       lcd.print("Tryk for start");
     }
-    else if(guessTimePage == 1 && digitalRead(buttonPin) == HIGH)
+    else if(guessTimePage == 1 && IsButtonPressed())
     {
       timeStarted = millis() / 1000;
       Serial.print("Tid startet: ");
@@ -41,7 +41,7 @@ void GuessTime()
       lcd.setCursor(0, 1);
       lcd.print("er gaaet");
     }
-    else if(guessTimePage == 2 && digitalRead(buttonPin) == HIGH)
+    else if(guessTimePage == 2 && IsButtonPressed())
     {
       delay(200);
       int timeGuessed = ((millis() / 1000) - timeStarted);
@@ -57,7 +57,7 @@ void GuessTime()
       // lcd.print(abs(timeGuessed - timeToGuess));
     }
 
-    if(guessTimePage == 3 && digitalRead(buttonPin) == HIGH)
+    if(guessTimePage == 3 && IsButtonPressed())
     {
       guessTimeRunning = false;
       delay(200);
