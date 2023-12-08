@@ -1,21 +1,26 @@
 void GuessTime()
 {
+  //Variabler funktionen skal bruge
   int guessTimePage = 0;
   int guessTimeRunning = false;
   int timeStarted = 0;
 
+  //Forsiaden til gæt tid spillet
   lcd.print("Guess time game!");
   delay(20);
   lcd.clear();
   
+  //Hvis der trykkes går man ind på spillet
   if(IsButtonPressed())
   {
     guessTimeRunning = true;
     delay(200);
   }
 
+  //Spillet kører når denne bool er sand
   while(guessTimeRunning == true)
   {
+    //Vis første side hvor man får at vide hvor lang tid man skal gætte
     if(guessTimePage == 0)
     {
       delay(200);
@@ -28,6 +33,7 @@ void GuessTime()
       lcd.setCursor(0, 1);
       lcd.print("Tryk for start");
     }
+    //Vis siden hvor man skal gætte sekunderne og derefter trykke når man tror tiden er gået
     else if(guessTimePage == 1 && IsButtonPressed())
     {
       timeStarted = millis() / 1000;
@@ -41,6 +47,7 @@ void GuessTime()
       lcd.setCursor(0, 1);
       lcd.print("er gaaet");
     }
+    //Vis sammenligning af den tid man skulle gætte og den tid der er gået
     else if(guessTimePage == 2 && IsButtonPressed())
     {
       delay(200);
@@ -57,6 +64,7 @@ void GuessTime()
       // lcd.print(abs(timeGuessed - timeToGuess));
     }
 
+    //Hvis man trykker går man tilbage til main
     if(guessTimePage == 3 && IsButtonPressed())
     {
       guessTimeRunning = false;
