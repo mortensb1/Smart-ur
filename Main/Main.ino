@@ -1,5 +1,10 @@
 #include <Encoder.h>
 #include "rgb_lcd.h"
+#include "RTClib.h"  // bruges til at præsentere date og time information
+#include <DS1307.h>
+#include <Wire.h>
+
+RTC_DS1307 rtc;
 
 rgb_lcd lcd;
 
@@ -20,8 +25,12 @@ void setup()
 {
   pinMode(buttonPin, INPUT);
   pinMode(buzzerPin, OUTPUT);
+
   lcd.begin(16, 2);
   Serial.begin(9600);
+  rtc.begin();
+
+  // rtc.adjust(DateTime(F(DATE), F(TIME)));
 }
 
 void loop()
@@ -43,10 +52,10 @@ void loop()
 }
 
 
-void Ur()
-{
-  lcd.print("Ur");
-  delay(10);
-  lcd.clear();
-}
+// void Ur()
+// {
+//   lcd.print("Ur");
+//   delay(10);
+//   lcd.clear();
+// }
 
