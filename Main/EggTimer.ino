@@ -19,7 +19,7 @@ void EggTimer()
     eggTimerRunning = true;
     eggPage = 1;
     lcd.print("...");
-    delay(1000);
+    delay(100);
   }
 
   //Eggetimeren kører mens denne bool er sand
