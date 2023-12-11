@@ -51,11 +51,3 @@ void loop()
   Serial.println(digitalRead(buttonPin));
 }
 
-
-// void Ur()
-// {
-//   lcd.print("Ur");
-//   delay(10);
-//   lcd.clear();
-// }
-

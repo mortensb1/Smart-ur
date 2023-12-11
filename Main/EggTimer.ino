@@ -81,12 +81,12 @@ void EggTimer()
       delay(20);
       lcd.clear();
 
-      //Hvis man trykker går man tilbagetil main
+      //Hvis man trykker går man tilbage til main
       if (IsButtonPressed())
       {
         eggTimerRunning = false;
       }
-      
+
       //Hvis tiden er gået skal den bippe
       if(minLeft >= eggBoilingTime)
       {

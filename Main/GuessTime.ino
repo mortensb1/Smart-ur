@@ -4,6 +4,7 @@ void GuessTime()
   int guessTimePage = 0;
   int guessTimeRunning = false;
   int timeStarted = 0;
+  int timeToGuess;
 
   //Forsiaden til gæt tid spillet
   lcd.print("Guess time game!");
@@ -24,7 +25,7 @@ void GuessTime()
     if(guessTimePage == 0)
     {
       delay(200);
-      int timeToGuess = random(2, 40);
+      timeToGuess = random(2, 40);
       guessTimePage = 1;
       lcd.clear();
       lcd.setCursor(3, 0);
@@ -60,8 +61,13 @@ void GuessTime()
       lcd.print(" s");
       lcd.setCursor(0, 1);
       lcd.print("Afvigelse: ");
-      lcd.print(abs(timeGuessed - 10)); // coden uder virker ikke
-      // lcd.print(abs(timeGuessed - timeToGuess));
+      int afvigelse = timeGuessed - timeToGuess;
+      if(afvigelse < 0)
+      {
+        afvigelse = afvigelse * -1;
+      }
+      lcd.print(afvigelse); 
+      lcd.print(" s"); 
     }
 
     //Hvis man trykker går man tilbage til main

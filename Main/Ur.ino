@@ -26,6 +26,6 @@ void Ur() {
   lcd.print(sekunder);
 
 
-  delay(1000);  // Her sker det en delay, som gøre sådan at den her loop kan læses, i den her tilfælde er det 1000 millisekund  hvilket betyder at displayet updates hver sekund
+  delay(100);  // Her sker det en delay, som gøre sådan at den her loop kan læses, i den her tilfælde er det 1000 millisekund  hvilket betyder at displayet updates hver sekund
   lcd.clear();
 }
