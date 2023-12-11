@@ -35,7 +35,5 @@ void loop()
   EncoderRead();
 
   funktionsListe[encoderCount]();
-  Serial.println(digitalRead(buttonPin));
-
 }
 
