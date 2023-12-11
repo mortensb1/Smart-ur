@@ -46,5 +46,6 @@ void KogEg()
                     kogEgPage = 2
         
         if kogEgPage = 2
-            
+            Bip med buzzeren
+            Skift til main når der trykkes
 
