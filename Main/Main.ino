@@ -27,27 +27,15 @@ void setup()
   pinMode(buzzerPin, OUTPUT);
 
   lcd.begin(16, 2);
-  Serial.begin(9600);
   rtc.begin();
-
-  // rtc.adjust(DateTime(F(DATE), F(TIME)));
 }
 
 void loop()
 {
-  encoderCount = encoder.read()/4;
+  EncoderRead();
 
-  if (encoderCount > 3)
-  {
-    encoder.write(0);
-    encoderCount = encoder.read()/4;
-  }
-  if (encoder.read() < 0)
-  {
-    encoder.write(15);
-    encoderCount = encoder.read()/4;
-  }
   funktionsListe[encoderCount]();
   Serial.println(digitalRead(buttonPin));
+
 }
 

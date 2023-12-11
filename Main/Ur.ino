@@ -7,11 +7,6 @@ void Ur() {
   minutter = now.minute();
   sekunder = now.second();
 
-  // Serial.println(now.minute());
-  // Serial.println(now.minute());
-  // Serial.printin(now.hour());
-  // Serial.printin(now.second());
-
 
   lcd.setCursor(0, 0);
   lcd.print("Klokken: ");
