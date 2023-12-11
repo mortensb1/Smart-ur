@@ -90,6 +90,10 @@ void EggTimer()
       //Hvis tiden er gået skal den bippe
       if(minLeft >= eggBoilingTime)
       {
+        lcd.clear();
+        lcd.print("Hold knappen inde");
+        lcd.setCursor(0,1);
+        lcd.print("for at stoppe");
         digitalWrite(buzzerPin, HIGH);
         delay(500);
         digitalWrite(buzzerPin, LOW);
