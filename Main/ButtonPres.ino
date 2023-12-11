@@ -3,10 +3,18 @@ bool IsButtonPressed()
 {
   if(digitalRead(buttonPin) == LOW && encoder.read() % 4 == 0)
   {
-    digitalWrite(buzzerPin, HIGH);
-    delay(100);
-    digitalWrite(buzzerPin, LOW);
-    return true;
+    if (buttonHasBeenPressed == false)
+    {
+      digitalWrite(buzzerPin, HIGH);
+      delay(100);
+      digitalWrite(buzzerPin, LOW);
+      buttonHasBeenPressed = true;
+      return true;
+    }
+  }
+  if (digitalRead(buttonPin) == HIGH)
+  {
+    buttonHasBeenPressed = false;
   }
   return false;
 }
