@@ -1,0 +1,8 @@
+function ButtonPress()
+
+    Hvis knappen er trykket ned og encoder-værdi % 4 == 0
+        Hvis knappen ikke er løftet
+            Lav bip lyd
+            Knappen har været løftet
+            return true
+    
