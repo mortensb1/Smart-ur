@@ -1,0 +1,15 @@
+function ButtonPress()
+
+    Hvis knappen er trykket ned og encoder-værdi % 4 == 0
+        Hvis buttonpressed == false
+            Lav bip lyd
+            buttonpressed = true
+            return true
+
+    Hvis knappen ikke er trykket
+        buttonpressed = false
+    
+    return false
+
+
+    
